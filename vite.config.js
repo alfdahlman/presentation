@@ -9,6 +9,7 @@ import addTableOfContents from "./src/plugins/addTableOfContents";
 import addMain from "./src/plugins/addMain";
 
 export default defineConfig({
+  base: "/presentation/",
   plugins: [
     {
       enforce: "pre",
