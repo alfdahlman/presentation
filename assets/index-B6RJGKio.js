@@ -73,7 +73,7 @@ Error generating stack: `+n.message+`
 };
 `})}),`
 `,k.jsx(i.p,{children:k.jsx(i.a,{href:"https://www.example.com",children:"regular link"})}),`
-`,k.jsx(i.p,{children:k.jsx(i.a,{href:"/assets/dummy.js.zip",title:"download",children:"download link"})}),`
+`,k.jsx(i.p,{children:k.jsx(i.a,{href:"assets/dummy.js.zip",title:"download",children:"download link"})}),`
 `,k.jsx(i.p,{children:k.jsx(i.a,{href:"https://www.example.com",title:"external",children:"external link"})}),`
 `,k.jsxs(i.p,{children:["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dapibus ipsum in justo scelerisque eleifend. Aliquam magna libero ",k.jsx(i.a,{href:"/assets/dummy.js.zip",title:"download",children:"download link"}),", fermentum sed laoreet ac, consectetur a leo."]}),`
 `,k.jsx(i.p,{children:k.jsx(i.img,{src:"assets/example-img.jpg",alt:"a keyboard"})}),`
