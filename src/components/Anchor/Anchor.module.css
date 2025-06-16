@@ -1,0 +1,14 @@
+.a {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  color: rgb(0, 0, 255)
+}
+
+.a:hover {
+    text-decoration: none;
+}
+
+.icon {
+  padding-left: 3px;
+}

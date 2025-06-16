@@ -1,0 +1,53 @@
+.wrapper {
+  display: flex;
+  box-shadow: #808080 3px 3px 5px;
+  margin-top: 20px;
+  
+  @media screen and (max-width: 599px) {
+    flex-direction: column;
+  }
+}
+
+.input {
+  position: relative;
+  flex: 1;
+}
+
+.icon {
+  font-size: 16px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.icon:hover {
+  opacity: 0.6;
+}
+
+.icon:active {
+  transform: scale(1.2);
+}
+
+.editor {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  box-sizing: border-box;
+  border: unset;
+  background-color: rgb(248, 248, 255);
+  padding: 20px 40px 20px 20px;
+}
+
+.editor:focus {
+  outline: unset;
+  border: 1px solid black;
+}
+
+.output {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  background-color: white;
+}
