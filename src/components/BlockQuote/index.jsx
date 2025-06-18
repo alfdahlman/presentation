@@ -1,10 +1,10 @@
-import { IoMdQuote } from "react-icons/io";
+import { IoBulbOutline } from "react-icons/io5";
 
 import classes from './BlockQuote.module.css'
 
 const BlockQuote = ({ children }) => (
   <blockquote className={classes.container}>
-    <IoMdQuote className={classes.icon} />
+    <IoBulbOutline className={classes.icon} />
     <div className={classes.text}>{children}</div>
   </blockquote>
 );

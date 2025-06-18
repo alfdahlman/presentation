@@ -3,7 +3,9 @@ body {
   margin: 0;
 }
 
+
 main {
+  width: calc(100% - 210px);
   max-width: 700px;
   margin: auto;
 }
@@ -13,6 +15,16 @@ h2,
 h3,
 h4 {
   font-family: monospace;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 20px;
 }
 
 p {
@@ -60,7 +72,15 @@ iframe {
     margin-right: 20px;
 }
 
+.assignment {
+  padding: 20px 20px 50px;
+}
+
 @media screen and (max-width: 599px) {
+  main {
+    width: 100%;
+  }
+
   .container {
     padding-top: 50px;
     gap: 0;
