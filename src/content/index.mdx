@@ -248,17 +248,17 @@ Before starting to code, we should consider the structure of the card. Below is 
 In HTML, this structure would be represented something like this:
 
 ```html
-<div class="card">
-  <div class="picture"></div>
-  <div class="content">
-    <div class="label-container">
-      <span class="label green">label green</span>
-      <span class="label red">label red</span>
+  <div class="card">
+    <div class="picture"></div>
+    <div class="content">
+      <div class="label-container">
+        <span class="label green">label green</span>
+        <span class="label red">label red</span>
+      </div>
+      <h2 class="name">Firstname Lastname</h2>
+      <span class="description">Description</span>
     </div>
-    <h2 class="name">Firstname Lastname</h2>
-    <span class="description">Description</span>
   </div>
-</div>
 ```
 
 Note that we are also adding `classes` to the elements, as we expect to style them in the following step. For the next step, we can add this HTML to the `<div id="app">` tag in our `card.html` file and reload the page.
@@ -271,96 +271,113 @@ To select the elements, we will use the classes assigned to the elements.
 We can start with the outer container, `.card`. We set a fixed `width` to the card, add a `box-shadow` and set the rounded corners. Note that we add a `font-family` to the outer container, which will be inherited by the inner containers.
 
 ```
-.card {
-  width: 450px;
-  margin: 30px auto;
-  font-family: "Inter", sans-serif;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0px 4px 14px 0px #0000001a;
-}
+  .card {
+    width: 450px;
+    margin: 30px auto;
+    font-family: "Inter", sans-serif;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 4px 14px 0px #0000001a;
+  }
 ```
 
 Next, we can style the picture. We want it to be full width of the parent container, but a set height of `500px`.
 We adspecifyd a `background-image`, pointing to an image in the same folder, and set the `background-size`to `cover`.
 
 ```
-.picture {
-  width: 100%;
-  height: 500px;
-  background-image: url("employee.jpg");
-  background-size: cover;
-}
+  .picture {
+    width: 100%;
+    height: 500px;
+    background-image: url("employee.jpg");
+    background-size: cover;
+  }
 ```
 
 The `content` class refers to the container wrapping the text part, at the bottom of the card.
 
 ```
-.content {
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  gap: 8px;
-}
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 8px;
+  }
 ```
 
 ```
-.label-container {
-  display: flex;
-  gap: 4px;
-}
+  .label-container {
+    display: flex;
+    gap: 4px;
+  }
 ```
 
 ```
-.label {
-  padding: 4px 8px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 700;
-}
+  .label {
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+  }
 
-.green {
-  background-color: #7ee880;
-}
+  .green {
+    background-color: #7ee880;
+  }
 
-.red {
-  background-color: #ff4a32;
-}
+  .red {
+    background-color: #ff4a32;
+  }
 ```
 
 ```
-.name {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 600;
-}
+  .name {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
 ```
 
 ```
-.description {
-  font-size: 16px;
-}
+  .description {
+    font-size: 16px;
+  }
 ```
 
 ### JavaScript
 
 At this point, you should have a completed card! However, we still haven't used any JavaScript. So next, we will remove the HTML we added, and instead add it through the DOM with JavaScript.
 
-We will create the elements we need, using the `createElement` method on the `document` object. Lets start by creating the outer div and add the class `card`:
+In the `card.html`, we have a `<script>` tag and a function called `ìnit`, where we can start adding our JavaScript. 
+
+This is how we create a function, a block of code we wanna run, and assign it to a variable called `init`. All the function does so far is selecting an element with the id `app`, and saving it to a variable called `app`. 
 
 ```javascript
-const card = document.createElement("div");
-card.classList.add("card");
+
+  const init = () => {
+    const app = document.getElementById("app");
+  };
+
+```
+
+This is how we call the above function, meaning we run whatever code we write in the `init` functions body.
+
+```javascript
+
+  init();
+
+```
+
+We will create the elements we need, using the `createElement` method on the `document` object. Lets start by creating the outer div and add the class `card` by adding the following code to the `init` function.
+
+```javascript
+
+  const card = document.createElement("div");
+  card.classList.add("card");
+
 ```
 
 We can repeat this pattern for all elements of the card, and create texts using the `createTextNode` method.
 
 ```javascript
-const init = () => {
-  const app = document.getElementById("app");
-
-  const card = document.createElement("div");
-  card.classList.add("card");
 
   const picture = document.createElement("div");
   picture.classList.add("picture");
@@ -388,16 +405,12 @@ const init = () => {
   const description = document.createElement("span");
   description.classList.add("description");
   const descriptionText = document.createTextNode("description");
-};
 
-init();
 ```
 
 Next, we need to append each element of the card to a parent:
 
 ```javascript
-const init = () => {
-  ...
 
   label1.appendChild(label1Text);
   label2.appendChild(label2Text);
@@ -413,24 +426,15 @@ const init = () => {
 
   card.appendChild(picture);
   card.appendChild(content);
-}
-
-init();
 
 ```
 
 and append the card to the document:
 
 ```javascript
-const init = () => {
-  ...
-
-  ...
 
   app.appendChild(card);
-}
 
-init();
 ```
 
 ### Bonus 
@@ -440,76 +444,88 @@ Although the code above works as expected, it is very verbose and it would be ha
 One pattern we use often is creating an `element` and assigning one or more classes to it. We could abstract this away to a utillity function, to avoid repeating ourselves, and make the code easier to read. 
 
 ```javascript 
-const createElemWithClasses = (element, ...classList) => {
-  const elem = document.createElement(element);
-  elem.classList.add(...classList);
 
-  return elem;
-};
+  const createElemWithClasses = (element, ...classList) => {
+    const elem = document.createElement(element);
+    elem.classList.add(...classList);
+
+    return elem;
+  };
+
 ```
 
 We could then call this function instead:
 
 ```javascript 
-const card = createElemWithClasses("div", "card");
+
+  const card = createElemWithClasses("div", "card");
+
 ```
 
 Another common pattern is to create a `textNode` and append it to an `element`, we could create a helper for that as well.
 
 ```javascript
-const appendTextToElem = (text, element) => {
-  const textNode = document.createTextNode(text);
 
-  return element.appendChild(textNode);
-};
+  const appendTextToElem = (text, element) => {
+    const textNode = document.createTextNode(text);
+
+    return element.appendChild(textNode);
+  };
+
 ``` 
 
 And call it like so: 
 
 ```javascript
-appendTextToElem("label 1", label1);
+
+  appendTextToElem("label 1", label1);
+
 ```
 This way, our `init` function would then be a bit easier to read: 
 
 ```javascript 
-const init = () => {
-  const card = createElemWithClasses("div", "card");
-  const picture = createElemWithClasses("div", "picture");
-  const content = createElemWithClasses("div", "content");
-  const labelContainer = createElemWithClasses("div", "label-container");
-  const label1 = createElemWithClasses("span", "label", "green");
-  const label2 = createElemWithClasses("span", "label", "red");
-  const name = createElemWithClasses("h2", "name");
-  const description = createElemWithClasses("span", "description");
 
-  appendTextToElem("label 1", label1);
-  appendTextToElem("label 2", label2);
-  appendTextToElem("name", name);
-  appendTextToElem("description", description);
+  const init = () => {
+    const card = createElemWithClasses("div", "card");
+    const picture = createElemWithClasses("div", "picture");
+    const content = createElemWithClasses("div", "content");
+    const labelContainer = createElemWithClasses("div", "label-container");
+    const label1 = createElemWithClasses("span", "label", "green");
+    const label2 = createElemWithClasses("span", "label", "red");
+    const name = createElemWithClasses("h2", "name");
+    const description = createElemWithClasses("span", "description");
 
-  labelContainer.appendChild(label1);
-  labelContainer.appendChild(label2);
+    appendTextToElem("label 1", label1);
+    appendTextToElem("label 2", label2);
+    appendTextToElem("name", name);
+    appendTextToElem("description", description);
 
-  content.appendChild(labelContainer);
-  content.appendChild(name);
-  content.appendChild(description);
+    labelContainer.appendChild(label1);
+    labelContainer.appendChild(label2);
 
-  card.appendChild(picture);
-  card.appendChild(content);
+    content.appendChild(labelContainer);
+    content.appendChild(name);
+    content.appendChild(description);
 
-  const app = document.getElementById("app");
-  app.appendChild(card);
-};
+    card.appendChild(picture);
+    card.appendChild(content);
+
+    const app = document.getElementById("app");
+    app.appendChild(card);
+  };
+
 ```
 
 Or, to make it even easier to get an overview, we could create another function responsible for creating the card:
 
 ```javascript 
-const init = () => {
-  const card = createCard();
-  const app = document.getElementById("app");
-  app.appendChild(card);
-};
+
+  const init = () => {
+    const card = createCard();
+    const app = document.getElementById("app");
+    app.appendChild(card);
+  };
+
 ```
 
 If you are feeling comfortable so far, feel free to explore more ways to refactor the code. Just keep in mind that the point of refactoring should be readability and simplicity, not minimizing the lines of code.
