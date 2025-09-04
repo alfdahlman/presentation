@@ -218,92 +218,102 @@ Start by downloading the starter files below, unzip them, and open `,T.jsx(i.cod
 `,T.jsx(i.p,{children:"Before starting to code, we should consider the structure of the card. Below is a representation of the elements the card consists of."}),`
 `,T.jsx(i.p,{children:T.jsx(i.img,{src:"/presentation/assets/elements.png",alt:"a card"})}),`
 `,T.jsx(i.p,{children:"In HTML, this structure would be represented something like this:"}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-html",children:`<div class="card">
-  <div class="picture"></div>
-  <div class="content">
-    <div class="label-container">
-      <span class="label green">label green</span>
-      <span class="label red">label red</span>
+`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-html",children:`  <div class="card">
+    <div class="picture"></div>
+    <div class="content">
+      <div class="label-container">
+        <span class="label green">label green</span>
+        <span class="label red">label red</span>
+      </div>
+      <h2 class="name">Firstname Lastname</h2>
+      <span class="description">Description</span>
     </div>
-    <h2 class="name">Firstname Lastname</h2>
-    <span class="description">Description</span>
   </div>
-</div>
 `})}),`
 `,T.jsxs(i.p,{children:["Note that we are also adding ",T.jsx(i.code,{children:"classes"})," to the elements, as we expect to style them in the following step. For the next step, we can add this HTML to the ",T.jsx(i.code,{children:'<div id="app">'})," tag in our ",T.jsx(i.code,{children:"card.html"})," file and reload the page."]}),`
 `,T.jsx(i.h3,{children:"CSS"}),`
 `,T.jsxs(i.p,{children:["Next, we will need to style the HTML, using CSS. To apply the styles, add them to the ",T.jsx(i.code,{children:"<style>"})," tag of ",T.jsx(i.code,{children:"card.html"}),"."]}),`
 `,T.jsxs(i.p,{children:[`To select the elements, we will use the classes assigned to the elements.
 We can start with the outer container, `,T.jsx(i.code,{children:".card"}),". We set a fixed ",T.jsx(i.code,{children:"width"})," to the card, add a ",T.jsx(i.code,{children:"box-shadow"})," and set the rounded corners. Note that we add a ",T.jsx(i.code,{children:"font-family"})," to the outer container, which will be inherited by the inner containers."]}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{children:`.card {
-  width: 450px;
-  margin: 30px auto;
-  font-family: "Inter", sans-serif;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0px 4px 14px 0px #0000001a;
-}
+`,T.jsx(i.pre,{children:T.jsx(i.code,{children:`  .card {
+    width: 450px;
+    margin: 30px auto;
+    font-family: "Inter", sans-serif;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 4px 14px 0px #0000001a;
+  }
 `})}),`
 `,T.jsxs(i.p,{children:["Next, we can style the picture. We want it to be full width of the parent container, but a set height of ",T.jsx(i.code,{children:"500px"}),`.
 We adspecifyd a `,T.jsx(i.code,{children:"background-image"}),", pointing to an image in the same folder, and set the ",T.jsx(i.code,{children:"background-size"}),"to ",T.jsx(i.code,{children:"cover"}),"."]}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{children:`.picture {
-  width: 100%;
-  height: 500px;
-  background-image: url("employee.jpg");
-  background-size: cover;
-}
+`,T.jsx(i.pre,{children:T.jsx(i.code,{children:`  .picture {
+    width: 100%;
+    height: 500px;
+    background-image: url("employee.jpg");
+    background-size: cover;
+  }
 `})}),`
 `,T.jsxs(i.p,{children:["The ",T.jsx(i.code,{children:"content"})," class refers to the container wrapping the text part, at the bottom of the card."]}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{children:`.content {
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  gap: 8px;
-}
+`,T.jsx(i.pre,{children:T.jsx(i.code,{children:`  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 8px;
+  }
 `})}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{children:`.label-container {
-  display: flex;
-  gap: 4px;
-}
+`,T.jsx(i.pre,{children:T.jsx(i.code,{children:`  .label-container {
+    display: flex;
+    gap: 4px;
+  }
 `})}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{children:`.label {
-  padding: 4px 8px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 700;
-}
+`,T.jsx(i.pre,{children:T.jsx(i.code,{children:`  .label {
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+  }
 
-.green {
-  background-color: #7ee880;
-}
+  .green {
+    background-color: #7ee880;
+  }
 
-.red {
-  background-color: #ff4a32;
-}
+  .red {
+    background-color: #ff4a32;
+  }
 `})}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{children:`.name {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 600;
-}
+`,T.jsx(i.pre,{children:T.jsx(i.code,{children:`  .name {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
 `})}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{children:`.description {
-  font-size: 16px;
-}
+`,T.jsx(i.pre,{children:T.jsx(i.code,{children:`  .description {
+    font-size: 16px;
+  }
 `})}),`
 `,T.jsx(i.h3,{children:"JavaScript"}),`
 `,T.jsx(i.p,{children:"At this point, you should have a completed card! However, we still haven't used any JavaScript. So next, we will remove the HTML we added, and instead add it through the DOM with JavaScript."}),`
-`,T.jsxs(i.p,{children:["We will create the elements we need, using the ",T.jsx(i.code,{children:"createElement"})," method on the ",T.jsx(i.code,{children:"document"})," object. Lets start by creating the outer div and add the class ",T.jsx(i.code,{children:"card"}),":"]}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`const card = document.createElement("div");
-card.classList.add("card");
-`})}),`
-`,T.jsxs(i.p,{children:["We can repeat this pattern for all elements of the card, and create texts using the ",T.jsx(i.code,{children:"createTextNode"})," method."]}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`const init = () => {
-  const app = document.getElementById("app");
+`,T.jsxs(i.p,{children:["In the ",T.jsx(i.code,{children:"card.html"}),", we have a ",T.jsx(i.code,{children:"<script>"})," tag and a function called ",T.jsx(i.code,{children:"ìnit"}),", where we can start adding our JavaScript."]}),`
+`,T.jsxs(i.p,{children:["This is how we create a function, a block of code we wanna run, and assign it to a variable called ",T.jsx(i.code,{children:"init"}),". All the function does so far is selecting an element with the id ",T.jsx(i.code,{children:"app"}),", and saving it to a variable called ",T.jsx(i.code,{children:"app"}),"."]}),`
+`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`
+  const init = () => {
+    const app = document.getElementById("app");
+  };
 
+`})}),`
+`,T.jsxs(i.p,{children:["This is how we call the above function, meaning we run whatever code we write in the ",T.jsx(i.code,{children:"init"})," functions body."]}),`
+`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`
+  init();
+
+`})}),`
+`,T.jsxs(i.p,{children:["We will create the elements we need, using the ",T.jsx(i.code,{children:"createElement"})," method on the ",T.jsx(i.code,{children:"document"})," object. Lets start by creating the outer div and add the class ",T.jsx(i.code,{children:"card"})," by adding the following code to the ",T.jsx(i.code,{children:"init"})," function."]}),`
+`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`
   const card = document.createElement("div");
   card.classList.add("card");
 
+`})}),`
+`,T.jsxs(i.p,{children:["We can repeat this pattern for all elements of the card, and create texts using the ",T.jsx(i.code,{children:"createTextNode"})," method."]}),`
+`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`
   const picture = document.createElement("div");
   picture.classList.add("picture");
 
@@ -330,14 +340,10 @@ card.classList.add("card");
   const description = document.createElement("span");
   description.classList.add("description");
   const descriptionText = document.createTextNode("description");
-};
 
-init();
 `})}),`
 `,T.jsx(i.p,{children:"Next, we need to append each element of the card to a parent:"}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`const init = () => {
-  ...
-
+`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`
   label1.appendChild(label1Text);
   label2.appendChild(label2Text);
   labelContainer.appendChild(label1);
@@ -352,81 +358,84 @@ init();
 
   card.appendChild(picture);
   card.appendChild(content);
-}
-
-init();
 
 `})}),`
 `,T.jsx(i.p,{children:"and append the card to the document:"}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`const init = () => {
-  ...
-
-  ...
-
+`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`
   app.appendChild(card);
-}
 
-init();
 `})}),`
 `,T.jsx(i.h3,{children:"Bonus"}),`
 `,T.jsx(i.p,{children:"Although the code above works as expected, it is very verbose and it would be hard to understand what is happening at a first look. So maybe we can clean it up a little, to make it more readable."}),`
 `,T.jsxs(i.p,{children:["One pattern we use often is creating an ",T.jsx(i.code,{children:"element"})," and assigning one or more classes to it. We could abstract this away to a utillity function, to avoid repeating ourselves, and make the code easier to read."]}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`const createElemWithClasses = (element, ...classList) => {
-  const elem = document.createElement(element);
-  elem.classList.add(...classList);
+`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`
+  const createElemWithClasses = (element, ...classList) => {
+    const elem = document.createElement(element);
+    elem.classList.add(...classList);
 
-  return elem;
-};
+    return elem;
+  };
+
 `})}),`
 `,T.jsx(i.p,{children:"We could then call this function instead:"}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`const card = createElemWithClasses("div", "card");
+`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`
+  const card = createElemWithClasses("div", "card");
+
 `})}),`
 `,T.jsxs(i.p,{children:["Another common pattern is to create a ",T.jsx(i.code,{children:"textNode"})," and append it to an ",T.jsx(i.code,{children:"element"}),", we could create a helper for that as well."]}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`const appendTextToElem = (text, element) => {
-  const textNode = document.createTextNode(text);
+`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`
+  const appendTextToElem = (text, element) => {
+    const textNode = document.createTextNode(text);
 
-  return element.appendChild(textNode);
-};
+    return element.appendChild(textNode);
+  };
+
 `})}),`
 `,T.jsx(i.p,{children:"And call it like so:"}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`appendTextToElem("label 1", label1);
+`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`
+  appendTextToElem("label 1", label1);
+
 `})}),`
 `,T.jsxs(i.p,{children:["This way, our ",T.jsx(i.code,{children:"init"})," function would then be a bit easier to read:"]}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`const init = () => {
-  const card = createElemWithClasses("div", "card");
-  const picture = createElemWithClasses("div", "picture");
-  const content = createElemWithClasses("div", "content");
-  const labelContainer = createElemWithClasses("div", "label-container");
-  const label1 = createElemWithClasses("span", "label", "green");
-  const label2 = createElemWithClasses("span", "label", "red");
-  const name = createElemWithClasses("h2", "name");
-  const description = createElemWithClasses("span", "description");
+`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`
+  const init = () => {
+    const card = createElemWithClasses("div", "card");
+    const picture = createElemWithClasses("div", "picture");
+    const content = createElemWithClasses("div", "content");
+    const labelContainer = createElemWithClasses("div", "label-container");
+    const label1 = createElemWithClasses("span", "label", "green");
+    const label2 = createElemWithClasses("span", "label", "red");
+    const name = createElemWithClasses("h2", "name");
+    const description = createElemWithClasses("span", "description");
 
-  appendTextToElem("label 1", label1);
-  appendTextToElem("label 2", label2);
-  appendTextToElem("name", name);
-  appendTextToElem("description", description);
+    appendTextToElem("label 1", label1);
+    appendTextToElem("label 2", label2);
+    appendTextToElem("name", name);
+    appendTextToElem("description", description);
 
-  labelContainer.appendChild(label1);
-  labelContainer.appendChild(label2);
+    labelContainer.appendChild(label1);
+    labelContainer.appendChild(label2);
 
-  content.appendChild(labelContainer);
-  content.appendChild(name);
-  content.appendChild(description);
+    content.appendChild(labelContainer);
+    content.appendChild(name);
+    content.appendChild(description);
 
-  card.appendChild(picture);
-  card.appendChild(content);
+    card.appendChild(picture);
+    card.appendChild(content);
 
-  const app = document.getElementById("app");
-  app.appendChild(card);
-};
+    const app = document.getElementById("app");
+    app.appendChild(card);
+  };
+
 `})}),`
 `,T.jsx(i.p,{children:"Or, to make it even easier to get an overview, we could create another function responsible for creating the card:"}),`
-`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`const init = () => {
-  const card = createCard();
-  const app = document.getElementById("app");
-  app.appendChild(card);
-};
+`,T.jsx(i.pre,{children:T.jsx(i.code,{className:"language-javascript",children:`
+  const init = () => {
+    const card = createCard();
+    const app = document.getElementById("app");
+    app.appendChild(card);
+  };
+
 `})}),`
 `,T.jsx(i.p,{children:"If you are feeling comfortable so far, feel free to explore more ways to refactor the code. Just keep in mind that the point of refactoring should be readability and simplicity, not minimizing the lines of code."})]})]})}function kN(r={}){const{wrapper:i}=r.components||{};return i?T.jsx(i,{...r,children:T.jsx(Ag,{...r})}):Ag(r)}function cc(r,i){throw new Error("Expected component `"+r+"` to be defined: you likely forgot to import, pass, or provide it.")}const BN="_container_5fvia_1",FN="_nav_5fvia_9",GN="_btn_5fvia_14",YN="_btnActive_5fvia_32",ns={container:BN,nav:FN,btn:GN,btnActive:YN},qN=({children:r})=>{const[i,_]=nn.useState(0),s=Dt.Children.toArray(r);return T.jsxs("div",{className:ns.container,children:[T.jsx("nav",{className:ns.nav,children:s.map(({props:{title:c}},u)=>T.jsx("button",{className:`${ns.btn} ${i===u?ns.btnActive:""}`,onClick:()=>_(u),children:c},u))}),s[i]]})},HN=({children:r})=>T.jsx("div",{className:"tab",children:r});function VN(r,i){if(r==null)return{};var _={};for(var s in r)if({}.hasOwnProperty.call(r,s)){if(i.indexOf(s)!==-1)continue;_[s]=r[s]}return _}function zN(r,i){if(r==null)return{};var _,s,c=VN(r,i);if(Object.getOwnPropertySymbols){var u=Object.getOwnPropertySymbols(r);for(s=0;s<u.length;s++)_=u[s],i.indexOf(_)===-1&&{}.propertyIsEnumerable.call(r,_)&&(c[_]=r[_])}return c}function Kd(r,i){(i==null||i>r.length)&&(i=r.length);for(var _=0,s=Array(i);_<i;_++)s[_]=r[_];return s}function KN(r){if(Array.isArray(r))return Kd(r)}function QN(r){if(typeof Symbol<"u"&&r[Symbol.iterator]!=null||r["@@iterator"]!=null)return Array.from(r)}function WN(r,i){if(r){if(typeof r=="string")return Kd(r,i);var _={}.toString.call(r).slice(8,-1);return _==="Object"&&r.constructor&&(_=r.constructor.name),_==="Map"||_==="Set"?Array.from(r):_==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(_)?Kd(r,i):void 0}}function $N(){throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)}function Qd(r){return KN(r)||QN(r)||WN(r)||$N()}function Vr(r){"@babel/helpers - typeof";return Vr=typeof Symbol=="function"&&typeof Symbol.iterator=="symbol"?function(i){return typeof i}:function(i){return i&&typeof Symbol=="function"&&i.constructor===Symbol&&i!==Symbol.prototype?"symbol":typeof i},Vr(r)}function XN(r,i){if(Vr(r)!="object"||!r)return r;var _=r[Symbol.toPrimitive];if(_!==void 0){var s=_.call(r,i);if(Vr(s)!="object")return s;throw new TypeError("@@toPrimitive must return a primitive value.")}return(i==="string"?String:Number)(r)}function jN(r){var i=XN(r,"string");return Vr(i)=="symbol"?i:i+""}function gb(r,i,_){return(i=jN(i))in r?Object.defineProperty(r,i,{value:_,enumerable:!0,configurable:!0,writable:!0}):r[i]=_,r}function Wd(){return Wd=Object.assign?Object.assign.bind():function(r){for(var i=1;i<arguments.length;i++){var _=arguments[i];for(var s in _)({}).hasOwnProperty.call(_,s)&&(r[s]=_[s])}return r},Wd.apply(null,arguments)}function Ig(r,i){var _=Object.keys(r);if(Object.getOwnPropertySymbols){var s=Object.getOwnPropertySymbols(r);i&&(s=s.filter(function(c){return Object.getOwnPropertyDescriptor(r,c).enumerable})),_.push.apply(_,s)}return _}function Vi(r){for(var i=1;i<arguments.length;i++){var _=arguments[i]!=null?arguments[i]:{};i%2?Ig(Object(_),!0).forEach(function(s){gb(r,s,_[s])}):Object.getOwnPropertyDescriptors?Object.defineProperties(r,Object.getOwnPropertyDescriptors(_)):Ig(Object(_)).forEach(function(s){Object.defineProperty(r,s,Object.getOwnPropertyDescriptor(_,s))})}return r}function ZN(r){var i=r.length;if(i===0||i===1)return r;if(i===2)return[r[0],r[1],"".concat(r[0],".").concat(r[1]),"".concat(r[1],".").concat(r[0])];if(i===3)return[r[0],r[1],r[2],"".concat(r[0],".").concat(r[1]),"".concat(r[0],".").concat(r[2]),"".concat(r[1],".").concat(r[0]),"".concat(r[1],".").concat(r[2]),"".concat(r[2],".").concat(r[0]),"".concat(r[2],".").concat(r[1]),"".concat(r[0],".").concat(r[1],".").concat(r[2]),"".concat(r[0],".").concat(r[2],".").concat(r[1]),"".concat(r[1],".").concat(r[0],".").concat(r[2]),"".concat(r[1],".").concat(r[2],".").concat(r[0]),"".concat(r[2],".").concat(r[0],".").concat(r[1]),"".concat(r[2],".").concat(r[1],".").concat(r[0])];if(i>=4)return[r[0],r[1],r[2],r[3],"".concat(r[0],".").concat(r[1]),"".concat(r[0],".").concat(r[2]),"".concat(r[0],".").concat(r[3]),"".concat(r[1],".").concat(r[0]),"".concat(r[1],".").concat(r[2]),"".concat(r[1],".").concat(r[3]),"".concat(r[2],".").concat(r[0]),"".concat(r[2],".").concat(r[1]),"".concat(r[2],".").concat(r[3]),"".concat(r[3],".").concat(r[0]),"".concat(r[3],".").concat(r[1]),"".concat(r[3],".").concat(r[2]),"".concat(r[0],".").concat(r[1],".").concat(r[2]),"".concat(r[0],".").concat(r[1],".").concat(r[3]),"".concat(r[0],".").concat(r[2],".").concat(r[1]),"".concat(r[0],".").concat(r[2],".").concat(r[3]),"".concat(r[0],".").concat(r[3],".").concat(r[1]),"".concat(r[0],".").concat(r[3],".").concat(r[2]),"".concat(r[1],".").concat(r[0],".").concat(r[2]),"".concat(r[1],".").concat(r[0],".").concat(r[3]),"".concat(r[1],".").concat(r[2],".").concat(r[0]),"".concat(r[1],".").concat(r[2],".").concat(r[3]),"".concat(r[1],".").concat(r[3],".").concat(r[0]),"".concat(r[1],".").concat(r[3],".").concat(r[2]),"".concat(r[2],".").concat(r[0],".").concat(r[1]),"".concat(r[2],".").concat(r[0],".").concat(r[3]),"".concat(r[2],".").concat(r[1],".").concat(r[0]),"".concat(r[2],".").concat(r[1],".").concat(r[3]),"".concat(r[2],".").concat(r[3],".").concat(r[0]),"".concat(r[2],".").concat(r[3],".").concat(r[1]),"".concat(r[3],".").concat(r[0],".").concat(r[1]),"".concat(r[3],".").concat(r[0],".").concat(r[2]),"".concat(r[3],".").concat(r[1],".").concat(r[0]),"".concat(r[3],".").concat(r[1],".").concat(r[2]),"".concat(r[3],".").concat(r[2],".").concat(r[0]),"".concat(r[3],".").concat(r[2],".").concat(r[1]),"".concat(r[0],".").concat(r[1],".").concat(r[2],".").concat(r[3]),"".concat(r[0],".").concat(r[1],".").concat(r[3],".").concat(r[2]),"".concat(r[0],".").concat(r[2],".").concat(r[1],".").concat(r[3]),"".concat(r[0],".").concat(r[2],".").concat(r[3],".").concat(r[1]),"".concat(r[0],".").concat(r[3],".").concat(r[1],".").concat(r[2]),"".concat(r[0],".").concat(r[3],".").concat(r[2],".").concat(r[1]),"".concat(r[1],".").concat(r[0],".").concat(r[2],".").concat(r[3]),"".concat(r[1],".").concat(r[0],".").concat(r[3],".").concat(r[2]),"".concat(r[1],".").concat(r[2],".").concat(r[0],".").concat(r[3]),"".concat(r[1],".").concat(r[2],".").concat(r[3],".").concat(r[0]),"".concat(r[1],".").concat(r[3],".").concat(r[0],".").concat(r[2]),"".concat(r[1],".").concat(r[3],".").concat(r[2],".").concat(r[0]),"".concat(r[2],".").concat(r[0],".").concat(r[1],".").concat(r[3]),"".concat(r[2],".").concat(r[0],".").concat(r[3],".").concat(r[1]),"".concat(r[2],".").concat(r[1],".").concat(r[0],".").concat(r[3]),"".concat(r[2],".").concat(r[1],".").concat(r[3],".").concat(r[0]),"".concat(r[2],".").concat(r[3],".").concat(r[0],".").concat(r[1]),"".concat(r[2],".").concat(r[3],".").concat(r[1],".").concat(r[0]),"".concat(r[3],".").concat(r[0],".").concat(r[1],".").concat(r[2]),"".concat(r[3],".").concat(r[0],".").concat(r[2],".").concat(r[1]),"".concat(r[3],".").concat(r[1],".").concat(r[0],".").concat(r[2]),"".concat(r[3],".").concat(r[1],".").concat(r[2],".").concat(r[0]),"".concat(r[3],".").concat(r[2],".").concat(r[0],".").concat(r[1]),"".concat(r[3],".").concat(r[2],".").concat(r[1],".").concat(r[0])]}var _c={};function JN(r){if(r.length===0||r.length===1)return r;var i=r.join(".");return _c[i]||(_c[i]=ZN(r)),_c[i]}function eO(r){var i=arguments.length>1&&arguments[1]!==void 0?arguments[1]:{},_=arguments.length>2?arguments[2]:void 0,s=r.filter(function(u){return u!=="token"}),c=JN(s);return c.reduce(function(u,d){return Vi(Vi({},u),_[d])},i)}function Dg(r){return r.join(" ")}function tO(r,i){var _=0;return function(s){return _+=1,s.map(function(c,u){return Sb({node:c,stylesheet:r,useInlineStyles:i,key:"code-segment-".concat(_,"-").concat(u)})})}}function Sb(r){var i=r.node,_=r.stylesheet,s=r.style,c=s===void 0?{}:s,u=r.useInlineStyles,d=r.key,p=i.properties,E=i.type,S=i.tagName,f=i.value;if(E==="text")return f;if(S){var O=tO(_,u),R;if(!u)R=Vi(Vi({},p),{},{className:Dg(p.className)});else{var C=Object.keys(_).reduce(function(I,k){return k.split(".").forEach(function(B){I.includes(B)||I.push(B)}),I},[]),h=p.className&&p.className.includes("token")?["token"]:[],L=p.className&&h.concat(p.className.filter(function(I){return!C.includes(I)}));R=Vi(Vi({},p),{},{className:Dg(L)||void 0,style:eO(p.className,Object.assign({},p.style,c),_)})}var y=O(i.children);return Dt.createElement(S,Wd({key:d},R),y)}}const nO=function(r,i){var _=r.listLanguages();return _.indexOf(i)!==-1};var aO=["language","children","style","customStyle","codeTagProps","useInlineStyles","showLineNumbers","showInlineLineNumbers","startingLineNumber","lineNumberContainerStyle","lineNumberStyle","wrapLines","wrapLongLines","lineProps","renderer","PreTag","CodeTag","code","astGenerator"];function Mg(r,i){var _=Object.keys(r);if(Object.getOwnPropertySymbols){var s=Object.getOwnPropertySymbols(r);i&&(s=s.filter(function(c){return Object.getOwnPropertyDescriptor(r,c).enumerable})),_.push.apply(_,s)}return _}function La(r){for(var i=1;i<arguments.length;i++){var _=arguments[i]!=null?arguments[i]:{};i%2?Mg(Object(_),!0).forEach(function(s){gb(r,s,_[s])}):Object.getOwnPropertyDescriptors?Object.defineProperties(r,Object.getOwnPropertyDescriptors(_)):Mg(Object(_)).forEach(function(s){Object.defineProperty(r,s,Object.getOwnPropertyDescriptor(_,s))})}return r}var iO=/\n/g;function rO(r){return r.match(iO)}function oO(r){var i=r.lines,_=r.startingLineNumber,s=r.style;return i.map(function(c,u){var d=u+_;return Dt.createElement("span",{key:"line-".concat(u),className:"react-syntax-highlighter-line-number",style:typeof s=="function"?s(d):s},"".concat(d,`
