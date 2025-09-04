@@ -5,7 +5,6 @@ import Table from "./Table";
 import ToC from "./ToC";
 import BlockQuote from "./BlockQuote";
 import Anchor from "./Anchor";
-import Cards, { Card } from "./Cards";
 
 export default {
   table: ({ rows }) => <Table rows={JSON.parse(rows)} />,
@@ -15,8 +14,6 @@ export default {
 
     return <CodeBlock lang={lang} {...p} />;
   },
-  Card: (props) => <div className="assignment"><Card {...props} /></div>,
-  Cards: (props) => <div className="assignment"><Cards {...props} /></div>,
   Playground,
   Tab,
   Tabs,
